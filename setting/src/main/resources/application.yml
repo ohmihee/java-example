@@ -1,0 +1,22 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: board
+# database ============
+  datasource:
+    url: jdbc:mysql://localhost:3306/board
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+# swagger ui ================
+springdoc:
+  # endpoint 표시 여부
+  show-actuator: true
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
