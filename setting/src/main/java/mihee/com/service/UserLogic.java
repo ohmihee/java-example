@@ -22,7 +22,7 @@ public class UserLogic {
     private final UserCustomRepository userCustomRepository;
 
     public String register(UserCdo userCdo) {
-        User user = User.register(userCdo);
+        User user = User.toEntity(userCdo);
         String userId = user.getId();
         user.setUserType(UserType.MEMBER);
         User dbUser = userRepository.findById(userId).orElse(null);

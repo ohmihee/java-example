@@ -34,7 +34,7 @@ public class User extends BaseEntityWithId {
         this.setCreatedBy(this.getId());
         this.setLastModifiedBy(this.getId());
     }
-    public static User register(UserCdo userCdo) {
+    public static User toEntity(UserCdo userCdo) {
         User user = new User();
         BeanUtils.copyProperties(userCdo, user);
         user.setId();

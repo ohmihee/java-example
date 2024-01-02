@@ -11,7 +11,15 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: my-group-name
+    streams:
+      state:
+        dir: /Users/mihee/environment/stateDir
+
 # swagger ui ================
 springdoc:
   # endpoint 표시 여부
@@ -20,3 +28,6 @@ springdoc:
     path: /api-docs
   swagger-ui:
     path: /swagger-ui.html
+
+test:
+  topic: test
