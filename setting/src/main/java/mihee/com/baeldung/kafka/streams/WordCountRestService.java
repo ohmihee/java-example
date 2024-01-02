@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class WordCountRestService {
     private final StreamsBuilderFactoryBean factoryBean;
 
+
     private final KafkaProducer kafkaProducer;
     @GetMapping("/count/{word}")
     public Long getWordCount(@PathVariable String word) {
