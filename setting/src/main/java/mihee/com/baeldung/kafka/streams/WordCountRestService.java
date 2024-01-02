@@ -15,6 +15,7 @@ public class WordCountRestService {
 
 
 
+
     private final KafkaProducer kafkaProducer;
     @GetMapping("/count/{word}")
     public Long getWordCount(@PathVariable String word) {
