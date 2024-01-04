@@ -28,6 +28,10 @@ public class KafkaTopicConfig {
     private String multiTypeTopicName;
 
     @Bean
+    /**
+     * KafkaAdmin
+     * kafkaAdmin은 카프카 토픽이나 파티션 생성, 삭제, 조회 등을 위해 사용된다.
+     * */
     public KafkaAdmin kafkaAdmin() {
         Map<String, Object> configs = new HashMap<>();
         configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
