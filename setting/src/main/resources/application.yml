@@ -29,5 +29,27 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
 
+# 카프카 토픽
+message:
+  topic:
+    name: baeldung
+long:
+  message:
+    topic:
+      name: longMessage
+greeting:
+  topic:
+    name: greeting
+filtered:
+  topic:
+    name: filtered
+partitioned:
+  topic:
+    name: partitioned
+multi:
+  type:
+    topic:
+      name: multitype
+
 test:
   topic: test
