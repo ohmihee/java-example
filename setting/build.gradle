@@ -30,6 +30,7 @@ dependencies {
     implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
     implementation('org.springframework.kafka:spring-kafka:3.1.0')
     implementation ('org.apache.kafka:kafka-streams:3.6.0')
+    implementation 'io.micrometer:micrometer-core:1.12.0'
     annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jakarta"
 
 

@@ -29,13 +29,3 @@ public class KafkaMessageConsumer {
         receivedMessages.clear();
     }
 }
-
-
-//    public List<ReceivedMessage> getReceivedMessages() {
-//        return receivedMessages;
-//    }
-//
-//    public void clearReceivedMessages() {
-//        receivedMessages.clear();
-//    }
-//}
