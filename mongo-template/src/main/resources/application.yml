@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: default
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+
+server:
+  port: 9091
+
+---
+spring:
+  config:
+    activate:
+      on-profile: default
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      authentication-database: mongotemplate
+      database: mongotemplate
+      username: test
+      password: test
