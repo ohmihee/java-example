@@ -1,4 +1,4 @@
-package mihee.com.board.service;
+package mihee.com.board.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import mihee.com.board.controller.user.sdo.UserCdo;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UserLogic {
+public class UserServiceImpl {
     private final UserRepository userRepository;
     private final UserCustomRepository userCustomRepository;
 

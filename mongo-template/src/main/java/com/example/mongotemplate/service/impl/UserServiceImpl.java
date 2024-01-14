@@ -14,7 +14,13 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
+    @Override
     public void saveAll(List<UserCdo> userCdos) {
         userRepository.saveAll(User.fromCdo(userCdos));
+    }
+
+    @Override
+    public void delete(String id) {
+        userRepository.findById(id).ifPresent(user -> userRepository.delete(user));
     }
 }

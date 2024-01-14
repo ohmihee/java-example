@@ -1,4 +1,4 @@
-package mihee.com.board.service;
+package mihee.com.board.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import mihee.com.board.models.category.Category;
@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class CategoryLogic {
+public class CategoryServiceImpl {
     private final CategoryRepository categoryRepository;
 
     public void test() {

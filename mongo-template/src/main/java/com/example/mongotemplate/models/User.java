@@ -19,12 +19,12 @@ import java.util.stream.Collectors;
 public class User implements Serializable {
     @Id
     private String id;
-    private String firstName;
-    private String lastName;
+    private String fullName;
     private String email;
     private String phone;
     private String nick;
     private String password;
+    private int age;
     transient List<Course> courseList;
     //transient List<>
 
@@ -41,8 +41,8 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return String.format(
-                "User{id: %s, firstName: %s, lastName: %s",
-                id, firstName, lastName
+                "User{id: %s, fullName: %s",
+                id, fullName
         );
     }
 

@@ -1,18 +1,18 @@
 package mihee.com.board.controller.category.sdo;
 
 import lombok.RequiredArgsConstructor;
-import mihee.com.board.service.CategoryLogic;
+import mihee.com.board.service.impl.CategoryServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController("/api/category")
 @RequiredArgsConstructor
 public class CategoryController {
-    private final CategoryLogic categoryLogic;
+    private final CategoryServiceImpl categoryServiceImpl;
 
     @GetMapping("/test")
     public void test(){
-        categoryLogic.test();
+        categoryServiceImpl.test();
     }
 
 }
