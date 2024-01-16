@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -22,5 +23,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(String id) {
         userRepository.findById(id).ifPresent(user -> userRepository.delete(user));
+    }
+    @Override
+    public Optional<User> findUserById(String id) {
+        return userRepository.findById(id);
     }
 }

@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 import java.util.List;
@@ -16,9 +17,8 @@ import java.util.stream.Collectors;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User implements Serializable {
-    @Id
-    private String id;
+@Document(collection = "USERS")
+public class User extends BaseEntity {
     private String fullName;
     private String email;
     private String phone;
@@ -42,7 +42,7 @@ public class User implements Serializable {
     public String toString() {
         return String.format(
                 "User{id: %s, fullName: %s",
-                id, fullName
+                this.getId(), fullName
         );
     }
 
