@@ -1,11 +1,13 @@
-package mihee.com.kafka.kafka.ssl;
+package com.example.examplecontroller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KafkaSslApplication {
+public class ExampleControllerApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(KafkaSslApplication.class, args);
+        SpringApplication.run(ExampleControllerApplication.class, args);
     }
+
 }
