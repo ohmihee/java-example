@@ -1,0 +1,6 @@
+rootProject.name = "example"
+include "example-boot"
+include "example-controller"
+include "example-domain"
+include "example-service"
+
