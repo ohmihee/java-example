@@ -1,6 +1,7 @@
 package com.example.exampledomain.user.store.storeImpl;
 
 import com.example.exampledomain.user.User;
+import com.example.exampledomain.user.sdo.AuthType;
 import com.example.exampledomain.user.sdo.UserCdo;
 import com.example.exampledomain.user.store.UserStore;
 import com.example.exampledomain.user.store.storeImpl.repository.UserRepository;
@@ -40,4 +41,6 @@ public class UserStoreImpl implements UserStore {
     public boolean modifyUser(User dbUser) {
         return Optional.ofNullable(userRepository.save(dbUser)).isPresent();
     }
+
+
 }

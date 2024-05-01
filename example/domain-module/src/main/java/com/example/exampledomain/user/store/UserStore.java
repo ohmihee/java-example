@@ -2,6 +2,7 @@ package com.example.exampledomain.user.store;
 
 
 import com.example.exampledomain.user.User;
+import com.example.exampledomain.user.sdo.AuthType;
 import com.example.exampledomain.user.sdo.UserCdo;
 
 import java.util.List;
@@ -16,4 +17,5 @@ public interface UserStore {
     List<User> findByEmail(String email);
 
     boolean modifyUser(User dbUser);
+
 }
