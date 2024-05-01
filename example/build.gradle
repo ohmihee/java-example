@@ -7,12 +7,17 @@ plugins {
 ext {
     lombokVersion = "1.18.24"
     springBootVersion = "3.2.4"
+    mysqlVersion = "8.2.0"
 
 }
 
 group = "example.com"
 version = "1.0-SNAPSHOT"
 sourceCompatibility = JavaVersion.VERSION_17
+
+allprojects {
+    group "com.example"
+}
 
 repositories {
 //    if (mavenLocal()) {
@@ -32,6 +37,12 @@ subprojects {
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
     repositories {
         if (mavenLocal()) {
             mavenLocal()
@@ -39,10 +50,21 @@ subprojects {
         mavenCentral()
     }
 
+    dependencies {
+        implementation "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+        implementation("org.projectlombok:lombok:${lombokVersion}")
+        annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
+        testImplementation("org.projectlombok:lombok:${lombokVersion}")
+        testAnnotationProcessor("org.projectlombok:lombok:${lombokVersion}")
+    }
+
 }
 
 dependencies {
-    compileOnly("org.projectlombok:lombok:${lombokVersion}")
+    implementation("org.projectlombok:lombok:${lombokVersion}")
     annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
     testImplementation("org.projectlombok:lombok:${lombokVersion}")
     testAnnotationProcessor("org.projectlombok:lombok:${lombokVersion}")

@@ -1,0 +1,12 @@
+
+
+dependencies {
+    implementation ("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation project(":domain-module")
+    implementation project(":service-module")
+    implementation project(":common-module")
+}
+
+
