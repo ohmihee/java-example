@@ -11,5 +11,5 @@ public class UserCdo {
     private String password;
     private String fullName;
     private String birth;
-    private String profileImage;
+    private String profileImageId;
 }

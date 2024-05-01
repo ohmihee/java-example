@@ -42,5 +42,10 @@ public class UserStoreImpl implements UserStore {
         return Optional.ofNullable(userRepository.save(dbUser)).isPresent();
     }
 
+    @Override
+    public List<User> findByPhone(String phone) {
+        return Optional.ofNullable(userRepository.findByPhoneNumber(phone)).orElse(Collections.emptyList());
+    }
+
 
 }

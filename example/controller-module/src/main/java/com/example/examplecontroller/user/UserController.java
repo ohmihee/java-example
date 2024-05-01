@@ -9,6 +9,7 @@ import com.example.exampleservice.user.sdo.UserSummaryRdo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -18,8 +19,8 @@ import java.util.List;
 public class UserController {
     private final UserService userService;
     @GetMapping()
-    public List<UserSummaryRdo> findAllUser() {
-        return userService.findAll();
+    public ResponseEntity<List<UserSummaryRdo>> findAllUser() {
+        return ResponseEntity.ok(userService.findAll());
     }
     @GetMapping("/{id}")
     public ResponseEntity<UserRdo> findById(@PathVariable String id) {
@@ -27,9 +28,15 @@ public class UserController {
         if (userRdo == null) return ResponseEntity.notFound().build();
         return ResponseEntity.ok(userService.findById(id));
     }
-    @GetMapping("/authentication/{email}")
+    @GetMapping("/authentication/email/{email}")
     public ResponseEntity<Boolean> sendEmailAuthentication(@PathVariable String email) {
         Boolean result = userService.sendEmailAuthentication(email);
+        return ResponseEntity.ok(result);
+    }
+
+    @GetMapping("/authentication/sms/{phone}")
+    public ResponseEntity<Boolean> sendSmsAuthentication(@PathVariable String phone) {
+        Boolean result = userService.sendSmsAuthentication(phone);
         return ResponseEntity.ok(result);
     }
 
@@ -40,12 +47,18 @@ public class UserController {
 
     }
     @PostMapping("/enrollment")
-    public boolean saveUser(@RequestBody UserCdo userCdo) {
-        return userService.saveUser(userCdo);
+    public ResponseEntity<Boolean> saveUser(@RequestBody UserCdo userCdo) {
+        return ResponseEntity.ok(userService.saveUser(userCdo));
     }
 
     @PutMapping("/edit/{id}")
-    public boolean modifyUser(@RequestBody List<NameValue> nameValues, @PathVariable String id) {
-        return userService.modifyUser(id, nameValues);
+    public ResponseEntity<Boolean> modifyUser(@RequestBody List<NameValue> nameValues, @PathVariable String id) {
+        return ResponseEntity.ok(userService.modifyUser(id, nameValues));
+    }
+
+    @PostMapping("/upload/profile")
+    public ResponseEntity<Boolean> uploadUserProfileImage(@RequestParam(value="id") String id,  @RequestPart(value="multipartFile") MultipartFile multipartFile) {
+        return ResponseEntity.ok( userService.uploadUserProfileImage(id, multipartFile));
+
     }
 }

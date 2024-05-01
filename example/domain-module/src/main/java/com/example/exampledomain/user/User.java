@@ -23,7 +23,8 @@ public class User extends BaseEntity{
     private String password;
     private String fullName;
     private String birth;
-    private String profileImage;
+    private String profileImageId;
+    private String phoneNumber;
     @PreventModify
     @Enumerated(EnumType.STRING)
     private GradeType grade;

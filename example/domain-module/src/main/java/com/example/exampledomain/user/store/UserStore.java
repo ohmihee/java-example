@@ -18,4 +18,5 @@ public interface UserStore {
 
     boolean modifyUser(User dbUser);
 
+    List<User> findByPhone(String phone);
 }
