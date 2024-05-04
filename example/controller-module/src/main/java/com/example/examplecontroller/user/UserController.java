@@ -59,6 +59,9 @@ public class UserController {
     @PostMapping("/upload/profile")
     public ResponseEntity<Boolean> uploadUserProfileImage(@RequestParam(value="id") String id,  @RequestPart(value="multipartFile") MultipartFile multipartFile) {
         return ResponseEntity.ok( userService.uploadUserProfileImage(id, multipartFile));
-
     }
+//    @GetMapping("/login")
+//    public ResponseEntity<Boolean> userLogin(){
+//
+//    }
 }
