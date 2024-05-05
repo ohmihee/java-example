@@ -14,11 +14,15 @@ import org.springframework.web.filter.GenericFilterBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * 사용자 지정 인증 필터 관련
+ * */
 public class AuthenticationFilter extends GenericFilterBean {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         try {
             Authentication authentication = AuthenticationService.getAuthentication((HttpServletRequest) request);
+            // 서버 요청 값에서 인증 관련 부분을 꺼내옴
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }catch (Exception e) {
             HttpServletResponse httpResponse =  (HttpServletResponse) response;

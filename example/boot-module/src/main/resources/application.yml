@@ -17,3 +17,22 @@ spring:
 
 server:
   port: 9099
+
+smtp:
+  email: o4881331
+  password: midas3356
+  accessKey: Ry3qvfJPQv0UeiaSUtcS
+  secretKey: fWgICnqF73afnDPJwgohwQ7OxLvZg11yB0IikaV2
+
+upload:
+  path: /Users/mihee/Desktop/file_uploader/
+
+hmac-auth:
+  header:
+    nonce: nonce
+    access-key: accesskey
+    authorization: authorization
+
+  access-key: 8c2ea66e-abfc-4394-8adb-fa52890bdce3
+  secret-key: 982064c6-c265-11ed-afa1-0242ac120002
+  expires: 60    # seconds
