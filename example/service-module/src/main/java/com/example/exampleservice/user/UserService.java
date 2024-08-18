@@ -1,15 +1,13 @@
 package com.example.exampleservice.user;
 
 import com.example.commonmodule.util.NameValue;
-import com.example.exampledomain.common.store.FileUploaderStore;
-import com.example.exampledomain.user.AuthenticationCode;
-import com.example.exampledomain.user.User;
-import com.example.exampledomain.user.sdo.AuthType;
-import com.example.exampledomain.user.sdo.AuthenticationCodeCdo;
-import com.example.exampledomain.user.sdo.UserCdo;
-import com.example.exampledomain.user.store.AuthenticationCodeStore;
-import com.example.exampledomain.user.store.UserStore;
-import com.example.exampledomain.user.store.storeImpl.repository.UserRepository;
+import com.example.domain.user.AuthenticationCode;
+import com.example.domain.user.User;
+import com.example.domain.user.sdo.AuthType;
+import com.example.domain.user.sdo.AuthenticationCodeCdo;
+import com.example.domain.user.sdo.UserCdo;
+import com.example.domain.user.store.AuthenticationCodeStore;
+import com.example.domain.user.store.UserStore;
 import com.example.exampleservice.file.FileService;
 import com.example.exampleservice.util.CodeUtil;
 import com.example.exampleservice.user.sdo.AuthenticationSummary;
@@ -17,6 +15,8 @@ import com.example.exampleservice.user.sdo.UserRdo;
 import com.example.exampleservice.user.sdo.UserSummaryRdo;
 import com.example.exampleservice.util.MailUtil;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -106,4 +106,12 @@ public class UserService {
         }
         return false;
     }
+
+    public Page<User> findAllUser(Integer pageNumber, Integer pageSize) {
+        if (pageNumber == null) pageNumber = 0;
+        if (pageSize == null) pageSize = 10;
+        return userStore.findAll(PageRequest.of(pageNumber, pageSize));
+    }
+
+
 }

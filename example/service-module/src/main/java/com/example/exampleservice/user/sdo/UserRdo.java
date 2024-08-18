@@ -1,7 +1,7 @@
 package com.example.exampleservice.user.sdo;
 
-import com.example.exampledomain.user.User;
-import com.example.exampledomain.user.sdo.GradeType;
+import com.example.domain.user.User;
+import com.example.domain.user.sdo.GradeType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

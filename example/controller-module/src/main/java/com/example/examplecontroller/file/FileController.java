@@ -1,6 +1,6 @@
 package com.example.examplecontroller.file;
 
-import com.example.exampledomain.common.FileUploader;
+import com.example.domain.common.FileUploader;
 import com.example.exampleservice.file.FileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.Resource;

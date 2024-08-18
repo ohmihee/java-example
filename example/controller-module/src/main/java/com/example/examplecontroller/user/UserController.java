@@ -1,12 +1,14 @@
 package com.example.examplecontroller.user;
 
 import com.example.commonmodule.util.NameValue;
-import com.example.exampledomain.user.sdo.UserCdo;
+import com.example.domain.user.User;
+import com.example.domain.user.sdo.UserCdo;
 import com.example.exampleservice.user.UserService;
 import com.example.exampleservice.user.sdo.AuthenticationSummary;
 import com.example.exampleservice.user.sdo.UserRdo;
 import com.example.exampleservice.user.sdo.UserSummaryRdo;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -59,6 +61,12 @@ public class UserController {
     @PostMapping("/upload/profile")
     public ResponseEntity<Boolean> uploadUserProfileImage(@RequestParam(value="id") String id,  @RequestPart(value="multipartFile") MultipartFile multipartFile) {
         return ResponseEntity.ok( userService.uploadUserProfileImage(id, multipartFile));
+    }
+
+    @GetMapping("/list")
+    public ResponseEntity<Page<User>> findAll(@RequestParam Integer page, @RequestParam Integer size) {
+        return ResponseEntity.ok(userService.findAllUser(page, size));
+
     }
 //    @GetMapping("/login")
 //    public ResponseEntity<Boolean> userLogin(){

@@ -1,8 +1,8 @@
 package com.example.exampleservice.file;
 
-import com.example.exampledomain.common.FileUploader;
-import com.example.exampledomain.common.sdo.FileUploaderCdo;
-import com.example.exampledomain.common.store.FileUploaderStore;
+import com.example.domain.common.FileUploader;
+import com.example.domain.common.sdo.FileUploaderCdo;
+import com.example.domain.common.store.FileUploaderStore;
 import com.example.exampleservice.util.FileUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,7 +12,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor

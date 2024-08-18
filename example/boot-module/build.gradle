@@ -10,6 +10,7 @@ dependencies {
     // 이메일 인증 관련
     implementation 'org.springframework.boot:spring-boot-starter-mail'
     api project (":controller-module")
+    api project(":domain-module")
 
     // 인증 관련
     implementation "org.springframework.boot:spring-boot-starter-security:${springBootVersion}"
