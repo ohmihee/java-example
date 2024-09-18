@@ -20,6 +20,10 @@ import javax.sql.DataSource;
 
 @Configuration
 public class BatchConfiguration {
+    // 배치 작업은 기본적으로 데이터를 읽고, 읽어들인 데이터를 변환한 후 출력하는 형태가 많다.
+    // reader -> 데이터 읽는 역할
+    // processor -> 읽어들인 데이터에 대한 처리 작업을 수행하는 역할
+    // writer -> 데이터를 출력하는 역할
     @Bean
     public FlatFileItemReader<Person> reader() {
         return new FlatFileItemReaderBuilder<Person>()
